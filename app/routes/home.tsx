@@ -1,4 +1,5 @@
 import { Button } from "~/components/ui/button";
+import CreateCardForm from "./widgets/create-card";
 
 export function meta() {
   return [
@@ -13,7 +14,9 @@ export default function Home() {
       <div className="grid h-full items-center text-center gap-6">
         <div className="block space-y-2 text-white">
           <h1 className="text-xl">Find your inspiration</h1>
-          <p className="text-sm">Discover card and themes that spark your creativity</p>
+          <p className="text-sm">
+            Discover card and themes that spark your creativity
+          </p>
         </div>
         <div className="flex p-4 bg-white items-center gap-4 rounded-md max-w-md mx-auto">
           <input
@@ -22,6 +25,9 @@ export default function Home() {
             placeholder="Search by card title or code"
           />
           <Button>Search</Button>
+        </div>
+        <div className="bg-white w-full p-4 text-center">
+          <CreateCardForm />
         </div>
       </div>
     </section>
