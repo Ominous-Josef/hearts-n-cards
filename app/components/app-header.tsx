@@ -1,6 +1,6 @@
 import type { FC } from "react";
+import CreateCardForm from "~/widgets/create-card";
 import { AppLogo } from "./app-logo";
-import { Button } from "./ui/button";
 
 export const AppHeader: FC = () => {
   return (
@@ -8,7 +8,7 @@ export const AppHeader: FC = () => {
       <div className="xl:container mx-auto p-4 flex items-center justify-between">
         <AppLogo />
 
-        <Button>Create a card</Button>
+        <CreateCardForm />
       </div>
     </header>
   );

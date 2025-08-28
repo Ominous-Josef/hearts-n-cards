@@ -7,15 +7,12 @@ export const CreateCardFormSchema = zod.object({
   title: zod
     .string({ error: "Title is required" })
     .min(1, { error: "Title is required" }),
-  description: zod
-    .string({ error: "Description is required" })
-    .min(1, { error: "Description is required" }),
   recipient: zod
     .string({ error: "Recipient is required" })
-    .min(1, { error: "Recipient is required" }),
+    .min(1, { error: "Recipient is required" }).optional(),
   recipientEmail: zod
     .email({ error: "Recipient email is required" })
-    .min(1, { error: "Recipient email is required" }),
+    .min(1, { error: "Recipient email is required" }).optional(),
 });
 
 export type CreateCardFormType = zod.infer<typeof CreateCardFormSchema>;

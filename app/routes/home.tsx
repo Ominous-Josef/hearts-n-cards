@@ -1,5 +1,5 @@
 import { Button } from "~/components/ui/button";
-import CreateCardForm from "./widgets/create-card";
+import { WishCardsList } from "~/widgets/wishCards-list";
 
 export function meta() {
   return [
@@ -10,26 +10,34 @@ export function meta() {
 
 export default function Home() {
   return (
-    <section className="bg-primary min-h-[70vh] grid content-center">
-      <div className="grid h-full items-center text-center gap-6">
-        <div className="block space-y-2 text-white">
-          <h1 className="text-xl">Find your inspiration</h1>
-          <p className="text-sm">
-            Discover card and themes that spark your creativity
-          </p>
+    <main>
+      <section className="bg-primary min-h-[70vh] grid content-center">
+        <div className="grid h-full items-center text-center gap-6">
+          <div className="block space-y-2 text-white">
+            <h1 className="text-xl">Find your inspiration</h1>
+            <p className="text-sm">
+              Discover card and themes that spark your creativity
+            </p>
+          </div>
+          <div className="flex p-4 bg-white items-center gap-4 w-full rounded-md max-w-md mx-auto">
+            <input
+              type="text"
+              className="text-sm border-none outline-none w-full"
+              placeholder="Search by card title or code"
+            />
+            <Button>Search</Button>
+          </div>
         </div>
-        <div className="flex p-4 bg-white items-center gap-4 rounded-md max-w-md mx-auto">
-          <input
-            type="text"
-            className="text-sm border-none outline-none w-full"
-            placeholder="Search by card title or code"
-          />
-          <Button>Search</Button>
+      </section>
+
+      <section className="py-8">
+        <div className="xl:container mx-auto p-4 space-y-4">
+          <h1 className="text-center text-lg font-semibold">
+            Check out some of our cards
+          </h1>
+          <WishCardsList />
         </div>
-        <div className="bg-white w-full p-4 text-center">
-          <CreateCardForm />
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
